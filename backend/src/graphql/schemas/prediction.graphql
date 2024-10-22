@@ -1,0 +1,20 @@
+# src/graphql/schemas/prediction.graphql
+type Prediction {
+  id: ID!
+  category: String!
+  predictedExpense: Float!
+  month: String!
+  createdAt: String!
+  updatedAt: String!
+}
+
+type Query {
+  getPrediction(id: ID!): Prediction
+  getAllPredictions: [Prediction!]
+}
+
+type Mutation {
+  createPrediction(category: String!, predictedExpense: Float!, month: String!): Prediction
+  updatePrediction(id: ID!, category: String, predictedExpense: Float, month: String): Prediction
+  deletePrediction(id: ID!): Boolean
+}

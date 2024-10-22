@@ -1,0 +1,28 @@
+# src/graphql/schemas/transaction.graphql
+type Transaction {
+  id: ID!
+  type: TransactionType!
+  amount: Float!
+  date: String!
+  description: String
+  category: String
+  createdAt: String!
+  updatedAt: String!
+}
+
+enum TransactionType {
+  INCOME
+  EXPENSE
+  TRANSFER
+}
+
+type Query {
+  getTransaction(id: ID!): Transaction
+  getAllTransactions: [Transaction!]
+}
+
+type Mutation {
+  createTransaction(type: TransactionType!, amount: Float!, date: String!, description: String, category: String): Transaction
+  updateTransaction(id: ID!, type: TransactionType, amount: Float, date: String, description: String, category: String): Transaction
+  deleteTransaction(id: ID!): Boolean
+}

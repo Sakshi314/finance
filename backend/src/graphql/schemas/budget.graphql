@@ -1,0 +1,26 @@
+# src/graphql/schemas/budget.graphql
+type Budget {
+  id: ID!
+  category: String!
+  limit: Float!
+  period: Period!
+  totalSpent: Float!
+  createdAt: String!
+  updatedAt: String!
+}
+
+enum Period {
+  MONTHLY
+  YEARLY
+}
+
+type Query {
+  getBudget(id: ID!): Budget
+  getAllBudgets: [Budget!]
+}
+
+type Mutation {
+  createBudget(category: String!, limit: Float!, period: Period!): Budget
+  updateBudget(id: ID!, category: String, limit: Float, period: Period): Budget
+  deleteBudget(id: ID!): Boolean
+}
