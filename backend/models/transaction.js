@@ -1,5 +1,6 @@
 // src/models/transaction.js
 const { DataTypes, Model } = require('sequelize');
+const sequelize = require('../config/dbConfig');
 
 class Transaction extends Model {}
 
@@ -33,7 +34,7 @@ Transaction.init({
         type: DataTypes.STRING,
     },
     }, {
-    sequelize: require('../../config/dbConfig'),
+    sequelize,
     modelName: 'transaction',
     timestamps: true,
 });

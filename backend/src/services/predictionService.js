@@ -1,4 +1,4 @@
-const { Prediction } = require('../models');
+const { Prediction } = require('../../models');
 
 class PredictionService {
   async createPrediction(predictionData, userId) {

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const transactionController = require('../controllers/transactionController');
-const authMiddleware = require('../middleware/authMiddleware'); // For protected routes
+const authMiddleware = require('../middleware/auth'); // For protected routes
 
 // Create a new transaction (Protected route)
 router.post('/', authMiddleware, transactionController.createTransaction);

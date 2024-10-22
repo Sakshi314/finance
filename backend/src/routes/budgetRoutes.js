@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const budgetController = require('../controllers/budgetController');
-const authMiddleware = require('../middleware/authMiddleware'); // For protected routes
+const authMiddleware = require('../middleware/auth'); // For protected routes
 
 // Create a new budget (Protected route)
 router.post('/', authMiddleware, budgetController.createBudget);

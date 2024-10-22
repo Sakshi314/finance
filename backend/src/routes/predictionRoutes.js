@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const predictionController = require('../controllers/predictionController');
-const authMiddleware = require('../middleware/authMiddleware'); // For protected routes
+const authMiddleware = require('../middleware/auth'); // For protected routes
 
 // Create a new prediction (Protected route)
 router.post('/', authMiddleware, predictionController.createPrediction);

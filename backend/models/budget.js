@@ -1,5 +1,6 @@
 // src/models/budget.js
 const { DataTypes, Model } = require('sequelize');
+const sequelize = require('../config/dbConfig');
 
 class Budget extends Model {}
 
@@ -31,7 +32,7 @@ Budget.init({
         defaultValue: 0,
     },
     }, {
-    sequelize: require('../../config/dbConfig'),
+    sequelize,
     modelName: 'budget',
     timestamps: true,
 });

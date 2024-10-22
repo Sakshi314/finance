@@ -1,5 +1,6 @@
 // src/models/prediction.js
 const { DataTypes, Model } = require('sequelize');
+const sequelize = require('../config/dbConfig');
 
 class Prediction extends Model {}
 
@@ -27,7 +28,7 @@ Prediction.init({
         allowNull: false,
     },
     }, {
-    sequelize: require('../../config/dbConfig'),
+    sequelize,
     modelName: 'prediction',
     timestamps: true,
 });

@@ -1,4 +1,4 @@
-const { Budget } = require('../models');
+const { Budget } = require('../../models');
 
 class BudgetService {
   async createBudget(budgetData, userId) {

@@ -1,6 +1,6 @@
 const apolloServer = require('./graphql');
 const express = require('express');
-const sequelize = require('./models').sequelize;
+const sequelize = require('../models').sequelize;
 const generateJWTSecret = require('./utils/generateSecret');
 
 const userRoutes = require('./routes/userRoutes');
@@ -27,7 +27,7 @@ apolloServer.start().then(() =>{
   sequelize.sync({ force: false}).then(() =>{
     console.log('Database synced');
     app.listen({ port: 4000 }, () => 
-        console.log(`listening on port${server.graphqlPath}`)
+        console.log(`listening on port${apolloServer.graphqlPath}`)
     );
   });
 });
